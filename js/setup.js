@@ -31,7 +31,6 @@ function generateObjects() {
   return result;
 
 }
-generateObjects();
 
 var wizards = generateObjects();
 
