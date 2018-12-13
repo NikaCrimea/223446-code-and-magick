@@ -5,17 +5,13 @@
     var setupDialogElement = document.querySelector('.setup');
     var dialogHandler = setupDialogElement.querySelector('.upload');
 
-    var startCoords = {
-
-    };
     dialogHandler.addEventListener('mousedown', function (evt) {
       evt.preventDefault();
 
-      startCoords = {
+      var startCoords = {
         x: evt.clientX,
         y: evt.clientY
       };
-      console.log(startCoords);
 
       var dragged = false;
 
