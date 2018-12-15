@@ -2,6 +2,7 @@
 var ESC_KEYCODE = 27;
 var ENTER_KEYCODE = 13;
 
+
 var userDialog = document.querySelector('.setup');
 
 var similarListElement = userDialog.querySelector('.setup-similar-list');
@@ -68,11 +69,18 @@ var onPopupEscPress = function (e) {
 var openPopup = function () {
   setup.classList.remove('hidden');
   document.addEventListener('keydown', onPopupEscPress);
+  window.dialog();
+};
+
+var resetPopupCoordinates = function () {
+  setup.style.left = null;
+  setup.style.top = null;
 };
 
 var closePopup = function () {
   setup.classList.add('hidden');
   document.removeEventListener('keydown', onPopupEscPress);
+  resetPopupCoordinates();
 };
 
 setupOpen.addEventListener('click', function () {
@@ -87,6 +95,7 @@ setupOpen.addEventListener('keydown', function (e) {
 
 setupClose.addEventListener('click', function () {
   closePopup();
+
 });
 
 setupClose.addEventListener('keydown', function (e) {
@@ -146,3 +155,4 @@ fireball.addEventListener('click', function () {
   var fireballColour = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
   fireball.style.background = fireballColour[randomI(fireballColour)];
 });
+
